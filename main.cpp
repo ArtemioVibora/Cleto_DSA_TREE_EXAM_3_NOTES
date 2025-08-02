@@ -1,4 +1,5 @@
 #include <iostream>
+#include <malloc.h>
 
 using namespace std;
 
@@ -7,14 +8,26 @@ struct Node {
     Node* left;
     Node* right;
 };
+Node* createNode(int val) {
+    Node* node = (Node*)malloc(sizeof(Node));
+    node->value = val;
+    node->left = NULL;
+    node->right = NULL;
 
-void inserter(Node *&root, int value) {
+    return node;
+}
+
+Node* inserter(Node *root, int value) {
+    if (root == NULL) {
+        return createNode(value);
+    }
     if (root-> value > value) {
-        inserter(root->left, value);
+        root->left = inserter(root->left, value);
     }
     else if (root-> value < value) {
-        inserter(root->right, value);
+        root->right = inserter(root->right, value);
     }
+    return root;
 
 }
 
@@ -81,6 +94,7 @@ void test() {
     n6.right = NULL;
     n6.left = NULL;
 
+    cout << "---------------------------------------------------" << endl;
     cout << "Preorder traversal: ";
     Preorder(&root);
     cout << endl;
@@ -90,6 +104,17 @@ void test() {
     cout << "Postorder traversal: ";
     Postorder(&root);
     cout << endl;
+    cout << "---------------------------------------------------" << endl;
+
+    Node *newRoot;
+    newRoot->value = 5;
+    newRoot->left = NULL;
+    newRoot->right = NULL;
+    for (int i = 1; i < 6; i++) {
+
+    }
+
+
 
 }
 
