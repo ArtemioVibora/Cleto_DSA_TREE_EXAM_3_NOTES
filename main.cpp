@@ -8,6 +8,16 @@ struct Node {
     Node* right;
 };
 
+void inserter(Node *&root, int value) {
+    if (root-> value > value) {
+        inserter(root->left, value);
+    }
+    else if (root-> value < value) {
+        inserter(root->right, value);
+    }
+
+}
+
 void Preorder(Node *node) {
 
     if (node != NULL) {
