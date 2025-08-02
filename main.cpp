@@ -106,18 +106,88 @@ void test() {
     cout << endl;
     cout << "---------------------------------------------------" << endl;
 
-    Node *newRoot;
-    newRoot->value = 5;
-    newRoot->left = NULL;
-    newRoot->right = NULL;
-    for (int i = 1; i < 6; i++) {
+    inserter(&root, 89);
+    cout << "Preorder traversal: ";
+    Preorder(&root);
+    cout << endl;
+    cout << "Inorder traversal: ";
+    Inorder(&root);
+    cout << endl;
+    cout << "Postorder traversal: ";
+    Postorder(&root);
+    cout << endl;
+    cout << "---------------------------------------------------" << endl;
+}
 
+void runProgram() {
+    int choice;
+    int value;
+    bool flag = true;
+    Node *root = NULL;
+
+    cout << "Enter value of root: ";
+    cin >> value;
+    root = inserter(root, value);
+
+    while (flag) {
+        cout << "Menu" << endl;
+        cout << "<1> insert" << endl;
+        cout << "<2> preorder" << endl;
+        cout << "<3> inorder" << endl;
+        cout << "<4> postorder" << endl;
+        cout << "<5> print all" << endl;
+        cout << "<6> exit" << endl;
+        cout << "\nChoice: ";
+        cin >> choice;
+        switch (choice) {
+            case 1:
+                cout << "Enter value: ";
+                cin >> value;
+                inserter(root, value);
+                break;
+            case 2:
+                cout << "---------------------------------------------------" << endl;
+                cout << "Preorder traversal: ";
+                Preorder(root);
+                cout << endl;
+                cout << "---------------------------------------------------" << endl;
+                break;
+            case 3:
+                cout << "---------------------------------------------------" << endl;
+                cout << "Inorder traversal: ";
+                Inorder(root);
+                cout << endl;
+                cout << "---------------------------------------------------" << endl;
+                break;
+            case 4:
+                cout << "---------------------------------------------------" << endl;
+                cout << "Postorder traversal: ";
+                Postorder(root);
+                cout << endl;
+                cout << "---------------------------------------------------" << endl;
+                break;
+            case 5:
+                cout << "---------------------------------------------------" << endl;
+                cout << "Preorder traversal: ";
+                Preorder(root);
+                cout << endl;
+                cout << "Inorder traversal: ";
+                Inorder(root);
+                cout << endl;
+                cout << "Postorder traversal: ";
+                Postorder(root);
+                cout << endl;
+                cout << "---------------------------------------------------" << endl;
+                break;
+            case 6:
+                flag = false;
+                break;
+            default:
+                break;
+        }
     }
-
-
-
 }
 
 int main() {
-    test();
+    runProgram();
 }
