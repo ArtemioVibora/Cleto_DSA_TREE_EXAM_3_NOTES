@@ -31,6 +31,13 @@ Node* inserter(Node *root, int value) {
 
 }
 
+void search(Node* root, int val) {
+    if (root == NULL) {
+        cout << "Empty Tree" << endl;
+        return;
+    }
+}
+
 void Preorder(Node *node) {
 
     if (node != NULL) {
@@ -139,7 +146,8 @@ void runProgram() {
         cout << "<3> inorder" << endl;
         cout << "<4> postorder" << endl;
         cout << "<5> print all" << endl;
-        cout << "<6> exit" << endl;
+        cout << "<6> search node" << endl;
+        cout << "<7> exit" << endl;
         cout << "\nChoice: ";
         cin >> choice;
         switch (choice) {
@@ -183,6 +191,9 @@ void runProgram() {
                 cout << "---------------------------------------------------" << endl;
                 break;
             case 6:
+
+                break;
+            case 7:
                 flag = false;
                 break;
             default:
