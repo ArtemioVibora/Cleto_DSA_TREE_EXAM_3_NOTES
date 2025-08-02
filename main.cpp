@@ -130,6 +130,9 @@ void runProgram() {
     root = inserter(root, value);
 
     while (flag) {
+        cout << "---------------------------------------" << endl;
+        cout << "                 LE TREE               " << endl;
+        cout << "---------------------------------------" << endl;
         cout << "Menu" << endl;
         cout << "<1> insert" << endl;
         cout << "<2> preorder" << endl;
